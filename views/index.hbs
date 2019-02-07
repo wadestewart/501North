@@ -2,8 +2,16 @@
 
 <ul>
     {{#each comments}}
-    <li>{{this.userComment}}</li>
+    <li>{{ this.userComment }}</li>
     {{/each}}
 </ul>
 
-<a href="/new">Add Your Perspective</a>
+<h2>Post Your Comment:</h2>
+
+<form action="/" method="post" accept-charset="utf-8">
+    <p>
+        <label>Share Your Thoughts:</label>
+        <input type="text" value="" name="userComment" id="" />
+    </p>
+    <input type="submit" value="Share" />
+</form>
