@@ -3,7 +3,7 @@ const mongoose = require ('../db/connection')
 
 // Using schema to define blueprint for Comment model (what attributes and their data types)
 const CommentSchema = new mongoose.Schema({
-    userComment = String
+    userComment: String
 })
 
 // Attaching schema to out model - two args = name of model (Comment) and our schema (CommentSchema)

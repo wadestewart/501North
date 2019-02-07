@@ -3,9 +3,9 @@ const Comment = require('../model/schema')
 const seedData = require('./seeds.json')
 
 // Clearing out any objects that might be in the database, then inserting seedData - note: this is ideal for bulk insertion, but bypasses validation (we'll validate with Comment.create() in controller)
-Comment.remove({})
+Comment.deleteMany({})
     .then(() => {
-        return Comment.collection.insert(seedData)
+        return Comment.collection.insertMany(seedData)
     })
     .then(() => {
         process.exit()

@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 // Linking mongoose to our database
-mongoose.connect('mongodb://localhost/comment')
+mongoose.connect('mongodb://localhost/comment', { useNewUrlParser: true })
 
 // using mongoose promise library
 mongoose.Promise = Promise
