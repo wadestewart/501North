@@ -1,0 +1,9 @@
+<h1>Hello</h1>
+
+<ul>
+    {{#each comments}}
+    <li><a href="/{{this.id}}">{{this.userComment}}</a> - <a href="edit/{{this.id}}">Edit</a></li>
+    {{/each}}
+</ul>
+
+<a href="/new">New</a>

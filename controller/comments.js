@@ -5,7 +5,9 @@ const Comment = require('../model/schema')
 
 router.get('/', (req, res) => {
     Comment.find({})
-        .then(comments => {
-            res.render('index', { comments })
-        })
+        // .then(comments => console.log(comments))
+        .then(comments => res.render('index', { comments }))
+        .catch(err => console.log(err))
 })
+
+module.exports = router
