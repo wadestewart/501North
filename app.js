@@ -2,11 +2,15 @@ const express           = require('express')
 const hbs               = require('express-handlebars')
 const parser            = require('body-parser')
 const methodOverride    = require('method-override')
+const path              = require('path')
 
 const commentsController = require('./controller/comments')
 
 const app               = express()
 const PORT              = 4000
+
+app.use(express.static(path.join(__dirname, '/public')))
+// app.use(express.static(path.join(__dirname, '/public/script.js')))
 
 app.use(parser.urlencoded({ extended: true }))
 
@@ -21,6 +25,7 @@ app.engine('.hbs', hbs({
 let commentsRouter = require('./controller/comments')
 app.use(commentsRouter)
 app.use(methodOverride('_method'))
+// app.use('/static', express.static('public'))
 app.use('/', commentsController)
 
 app.listen(PORT, () => console.log(`Live on port ${PORT}`))

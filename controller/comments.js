@@ -13,6 +13,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     Comment
         .create(req.body)
+        .then(() => res.redirect('/'))
+})
+
+router.put('/:id', (req, res) => {
+    Comment
+        .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
         .then(comment => res.redirect('/'))
 })
 
