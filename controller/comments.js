@@ -10,4 +10,8 @@ router.get('/', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.get('/new', (req, res) => {
+    res.render('/new')
+})
+
 module.exports = router
