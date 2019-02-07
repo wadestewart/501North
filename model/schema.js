@@ -1,5 +1,5 @@
 // Requiring the mongoose instance from the connection file
-const mongoose = require ('./connection')
+const mongoose = require ('../db/connection')
 
 // Using schema to define blueprint for Comment model (what attributes and their data types)
 const CommentSchema = new mongoose.Schema({
