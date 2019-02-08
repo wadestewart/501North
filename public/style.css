@@ -1,18 +1,16 @@
 .navbar-fixed {
-    position: fixed;
-    z-index: 9999999;
+    height: 7.25rem;
 }
 
 .brand-logo > img {
-    padding: 1rem 0 0 1rem;
+    padding: 0.25rem 0 0 1rem;
 }
 
 #welcome {
     background: linear-gradient(to bottom, transparent, #fff 80%), url('/imgs/501-traffic.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    padding: 10rem 0 0 0;
+    height: 100%;
     width: 100vw;
 }
 

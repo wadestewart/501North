@@ -29,7 +29,7 @@ router.get('/comments/edit/:id', (req, res) => {
 router.put('/comments/:id', (req, res) => {
     Comment
         .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-        .then(comment => res.redirect('/'))
+        .then(() => res.redirect('/comments'))
 })
 
 router.delete('/comments/:id', (req, res) => {
