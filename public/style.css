@@ -18,7 +18,8 @@
     width: 100vw;
 }
 
-#doc-title > i {
+#icons {
+    color: #ff6e40;
     vertical-align: bottom;
 }
 
