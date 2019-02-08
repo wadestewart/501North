@@ -17,7 +17,7 @@ router.get('/comments', (req, res) => {
 router.post('/comments', (req, res) => {
     Comment
         .create(req.body)
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/comments'))
 })
 
 router.get('/comments/edit/:id', (req, res) => {
@@ -35,7 +35,7 @@ router.put('/comments/:id', (req, res) => {
 router.delete('/comments/:id', (req, res) => {
     Comment
         .findOneAndRemove({ _id: req.params.id })
-        .then(() => res.redirect('/'))
+        .then(() => res.redirect('/comments'))
   });
 
 module.exports = router
