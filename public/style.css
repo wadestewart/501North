@@ -7,10 +7,16 @@ nav {
     width: 7rem;
 }
 
+.nav-wrapper > h3 {
+    padding: 0 2rem 0 0;
+}
+
 #welcome {
-    background-image: url('/imgs/501-traffic.jpg');
+    background: linear-gradient(to bottom, transparent, #fff), url('/imgs/501-traffic.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    opacity: 0.7;
+    opacity: 0.5;
+    overflow-y: hidden;
+    width: 100vw;
 }
