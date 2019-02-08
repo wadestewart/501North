@@ -1,4 +1,16 @@
+nav {
+    height: 7rem;
+}
+
 .brand-logo > img {
-    height: 3rem;
-    width: 3rem;
+    height: 7rem;
+    width: 7rem;
+}
+
+#welcome {
+    background-image: url('/imgs/501-traffic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.7;
 }
