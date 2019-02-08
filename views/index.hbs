@@ -1,35 +1,39 @@
 
-<div class="row">
-    {{#each comments}}
-        <div class="col s12 m6">
-            <div class="card deep-orange accent-2">
-                <div class="card-content white-text">
-                <span class="card-title">Comment:</span>
-                    {{ this.userComment }}
-                </div>
-                <div class="card-action">
-                    <a class="white-text" href="/comments/edit/{{this.id}}">Edit</a>
+<figure>
+    <img src="/imgs/501-map.jpg" alt="Map of Route 501 North">
+</figure>
+<div class="container">
+    <div class="row">
+        {{#each comments}}
+            <div class="col s12 m7">
+                <div class="card deep-orange accent-2">
+                    <div class="card-content white-text">
+                    <span class="card-title">Comment:</span>
+                        {{ this.userComment }}
+                    </div>
+                    <div class="card-action white">
+                        <a class="text-deep-orange text-accent-2" href="/comments/edit/{{this.id}}">Edit</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {{/each}}
-</div>
-
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-content">
-          <h2>Post Your Comment:</h2>
-            <form action="/comments" method="post" accept-charset="utf-8">
-                <p>
-                    <label>Share Your Thoughts:</label>
-                    <input type="text" value="" name="userComment" id="" />
-                </p>
-                <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Share" />
-            </form>
-      </div>
+        {{/each}}
     </div>
-  </div>
+    <div class="row">
+        <div class="col s12 m7">
+        <div class="card">
+            <div class="card-content">
+                <h4>Please Share Your Thoughts:</h4>
+                <form action="/comments" method="post" accept-charset="utf-8">
+                    <p>
+                        <label>Post Your Comment</label>
+                        <input type="text" value="" name="userComment" id="" />
+                    </p>
+                    <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Share" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
