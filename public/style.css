@@ -2,12 +2,12 @@
     height: 7.25rem;
 }
 
-.nav-wrapper {
-    padding: 0 3rem;
+nav {
+    height: 7.25rem;
 }
 
 .brand-logo > img {
-    padding: 0.25rem 0 0 1rem;
+    padding: 0.25rem 0 0 10rem;
 }
 
 #welcome {
@@ -15,12 +15,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    padding: 2rem;
     width: 100vw;
 }
 
 #icons {
     color: #ff6e40;
     vertical-align: bottom;
+}
+
+#discuss-card {
+    margin-bottom: 2rem;
 }
 
 figure {
