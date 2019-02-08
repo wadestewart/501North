@@ -8,12 +8,12 @@
               <label>Comment:</label>
               <input type="text" value="{{this.userComment}}" name="userComment"/>
             </p>
-            <div class="card-action">
+            <div id="edit-action" class="card-action">
               <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Update" />
-              <form action="/comments/{{this.id}}?_method=delete" method="post">
-                <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Remove">
-              </form>
             </div>
+          </form>
+          <form action="/comments/{{this.id}}?_method=delete" method="post">
+            <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Remove">
           </form>
       </div>
   </div>
