@@ -4,22 +4,7 @@
 </figure>
 <div class="container">
     <div class="row">
-        {{#each comments}}
-            <div class="col s12 m7">
-                <div class="card deep-orange accent-2">
-                    <div class="card-content white-text">
-                    <span class="card-title">Comment:</span>
-                        {{ this.userComment }}
-                    </div>
-                    <div class="card-action white">
-                        <a class="text-deep-orange text-accent-2" href="/comments/edit/{{this.id}}">Edit</a>
-                    </div>
-                </div>
-            </div>
-        {{/each}}
-    </div>
-    <div class="row">
-        <div class="col s12 m7">
+        <div class="col s12 m8 push-m2">
         <div class="card">
             <div class="card-content">
                 <h4>Please Share Your Thoughts:</h4>
@@ -32,6 +17,21 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="row">
+        {{#each comments}}
+            <div class="col s12 m8 push-m2">
+                <div class="card deep-orange accent-2">
+                    <div class="card-content white-text">
+                    <span class="card-title">Comment:</span>
+                        {{ this.userComment }}
+                    </div>
+                    <div class="card-action white">
+                        <a class="text-deep-orange text-accent-2" href="/comments/edit/{{this.id}}">Edit</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
     </div>
 </div>
 

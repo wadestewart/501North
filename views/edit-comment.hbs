@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col s12 m7">
+  <div class="col s12 m8 push-m2">
     <div class="card">
       <div class="card-content">
-          <h2>Edit Your Comment:</h2>
+          <h4>Edit Your Comment:</h4>
           <form action="/comments/{{this.id}}?_method=put" method="post">
             <p>
               <label>Comment:</label>
-              <input type="text" value="{{this.userComment}}" name="userComment"/>
+              <input class="edit-input" type="text" value="{{this.userComment}}" name="userComment"/>
             </p>
             <div id="edit-action" class="card-action">
               <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Update" />
