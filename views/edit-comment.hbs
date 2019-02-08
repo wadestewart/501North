@@ -5,9 +5,9 @@
     <label>Comment:</label>
     <input type="text" value="{{this.userComment}}" name="userComment"/>
   </p>
-  <input type="submit" value="Update" />
+  <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Update" />
 </form>
 
 <form action="/comments/{{this.id}}?_method=delete" method="post">
-  <input type="submit" value="Remove">
+  <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Remove">
 </form>

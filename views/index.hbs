@@ -1,26 +1,35 @@
 
 <div class="row">
     {{#each comments}}
-        <div class="col s12">
-            <div class="card blue-grey darken-1">
+        <div class="col s12 m6">
+            <div class="card deep-orange accent-2">
                 <div class="card-content white-text">
                 <span class="card-title">Comment:</span>
-                    <li>{{ this.userComment }}</li>
+                    {{ this.userComment }}
                 </div>
                 <div class="card-action">
-                    <a href="/comments/edit/{{this.id}}">Edit</a>
+                    <a class="white-text" href="/comments/edit/{{this.id}}">Edit</a>
                 </div>
             </div>
         </div>
     {{/each}}
 </div>
 
-<h2>Post Your Comment:</h2>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <h2>Post Your Comment:</h2>
+            <form action="/comments" method="post" accept-charset="utf-8">
+                <p>
+                    <label>Share Your Thoughts:</label>
+                    <input type="text" value="" name="userComment" id="" />
+                </p>
+                <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Share" />
+            </form>
+      </div>
+    </div>
+  </div>
 
-<form action="/comments" method="post" accept-charset="utf-8">
-    <p>
-        <label>Share Your Thoughts:</label>
-        <input type="text" value="" name="userComment" id="" />
-    </p>
-    <input type="submit" value="Share" />
-</form>
+
+
