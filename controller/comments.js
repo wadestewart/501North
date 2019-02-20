@@ -17,17 +17,21 @@ router.get('/comments', db.getComments)
 //         .catch(err => console.log(err))
 // })
 
-router.post('/comments', (req, res) => {
-    Comment
-        .create(req.body)
-        .then(() => res.redirect('/comments'))
-})
+router.post('/comments', db.createComment)
 
-router.get('/comments/edit/:id', (req, res) => {
-    Comment
-        .findOne({ _id: req.params.id })
-        .then(comment => res.render('edit-comment', comment))
-})
+// router.post('/comments', (req, res) => {
+    //     Comment
+    //         .create(req.body)
+    //         .then(() => res.redirect('/comments'))
+    // })
+    
+router.get('/comments/edit/:id', db.getCommentById)
+    
+// router.get('/comments/edit/:id', (req, res) => {
+//     Comment
+//         .findOne({ _id: req.params.id })
+//         .then(comment => res.render('edit-comment', comment))
+// })
 
 router.put('/comments/:id', (req, res) => {
     Comment
@@ -35,10 +39,12 @@ router.put('/comments/:id', (req, res) => {
         .then(() => res.redirect('/comments'))
 })
 
-router.delete('/comments/:id', (req, res) => {
-    Comment
-        .findOneAndRemove({ _id: req.params.id })
-        .then(() => res.redirect('/comments'))
-  });
+router.delete('/comments/:id', db.deleteComment)
+
+// router.delete('/comments/:id', (req, res) => {
+//     Comment
+//         .findOneAndRemove({ _id: req.params.id })
+//         .then(() => res.redirect('/comments'))
+//   })
 
 module.exports = router

@@ -13,8 +13,31 @@ const getComments = (req, res) => {
         if (err) {
             throw err
         }
-        res.status(200).render('index', { comments })
+        res
+            .status(200)
+            .render('index', { comments })
     })
+}
+
+const createComment = (req, res) => {
+    const user_comment = req.body.user_comment
+
+    pool
+        .query('INSERT INTO comments (user_comment) VALUES ($1)', [user_comment])
+        // .then(() => console.log(req.body.user_comment))
+        .then(() => res.redirect('/comments'))
+        .catch(e => setImmediate(() => { throw e }))
+
+    // pool
+    //     .query('INSERT INTO comments (user_comment) VALUES ($1)', [user_comment], (err, result) => {
+    //     if (err) {
+    //         throw err
+    //     }
+    //     res
+    //         .status(201)
+    //         // .send(`Comment added with ID: ${result.insertId}`)
+    //         .redirect('/comments', () => console.log(`Comment added with ID: ${result.insertId}`))
+    // })
 }
 
 const getCommentById = (req, res) => {
@@ -25,48 +48,51 @@ const getCommentById = (req, res) => {
         if(err) {
             throw err
         }
-        res.status(200).render('edit-comment', comment)
-    })
-}
-
-const createComment = (req, res) => {
-    const text = req.body
-
-    pool.query('INSERT INTO comments text VALUES ($1)', [text], (err, result) => {
-        if (err) {
-            throw err
-        }
-        res.status(201).send(`Comment added with ID: ${result.insertId}`)
+        res
+            .status(200)
+            .render('edit-comment', comment)
     })
 }
 
 const updateComment = (req, res) => {
     const id = parseInt(req.params.id)
-    const text = req.body
+    const user_comment = req.body
 
-    pool.query('UPDATE comments SET text = $1 WHERE id = $2', [text], (err, results) =>{
+    pool.query('UPDATE comments SET user_comment = $1 WHERE id = $2', [user_comment], (err, results) =>{
         if (err) {
             throw err
         }
-        res.status(200).send(`Comment modified with ID: ${id}`)
+        res
+            .status(200)
+            // .send(`Comment modified with ID: ${id}`)
+            .redirect('/comments', console.log(`Comment modified with ID: ${id}`))
     })
 }
 
 const deleteComment = (req, res) => {
     const id = parseInt(req.params.id)
 
-    pool.query('DELETE FROM comments WHERE id = $1', [id], (err, results) =>{
-        if(err) {
-            throw err
-        }
-        res.status(200).send(`Comment deleted with ID: ${id}`)
-    })
+    pool
+        .query('DELETE FROM comments WHERE id = $1', [id])
+        // .then(() => console.log(`Comment deleted with ID: ${id}`))
+        .then(() => res.redirect('/comments'))
+        .catch(e => setImmediate(() => { throw e }))
+
+    // pool
+    //     .query('DELETE FROM comments WHERE id = $1', [id], (err, results) =>{
+    //     if(err) {
+    //         throw err
+    //     }
+    //     res
+    //         .status(200)
+    //         .send(`Comment deleted with ID: ${id}`)
+    // })
 }
 
 module.exports = {
     getComments,
-    getCommentById,
     createComment,
+    getCommentById,
     updateComment,
     deleteComment
 }
