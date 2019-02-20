@@ -1,18 +1,21 @@
 const express = require('express')
 const router = express.Router()
+const db = require('../db/queries')
 
-const Comment = require('../model/schema')
+// const Comment = require('../model/schema')
 
 router.get('/', (req, res) => {
     res.render('welcome')
 })
 
-router.get('/comments', (req, res) => {
-    Comment
-        .find({})
-        .then(comments => res.render('index', { comments }))
-        .catch(err => console.log(err))
-})
+router.get('/comments', db.getComments)
+
+// router.get('/comments', (req, res) => {
+//     Comment
+//         .find({})
+//         .then(comments => res.render('index', { comments }))
+//         .catch(err => console.log(err))
+// })
 
 router.post('/comments', (req, res) => {
     Comment
