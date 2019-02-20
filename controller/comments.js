@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/queries')
 
-const Comment = require('../model/schema')
+// const Comment = require('../model/schema')
 
 router.get('/', (req, res) => {
     res.render('welcome')
