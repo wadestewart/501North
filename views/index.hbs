@@ -11,7 +11,7 @@
                 <form action="/comments" method="post" accept-charset="utf-8">
                     <p>
                         <label>Post Your Comment</label>
-                        <input type="text" value="" name="user_comment" id="" />
+                        <input type="text" value="" name="userComment" id="" />
                     </p>
                     <input class="waves-effect deep-orange accent-2 btn" type="submit" value="Share" />
                 </form>
@@ -24,7 +24,7 @@
                 <div class="card deep-orange accent-2">
                     <div class="card-content white-text">
                     <span class="card-title">Comment:</span>
-                        {{ this.user_comment }}
+                        {{this.user_comment}}
                     </div>
                     <div class="card-action white">
                         <a class="text-deep-orange text-accent-2" href="/comments/edit/{{this.id}}">Edit</a>
