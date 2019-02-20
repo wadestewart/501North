@@ -15,9 +15,9 @@ router.get('/comments', (req, res) => {
 })
 
 router.post('/comments', (req, res) => {
-        Comment
-            .create(req.body)
-            .then(() => res.redirect('/comments'))
+    Comment
+        .create(req.body)
+        .then(() => res.redirect('/comments'))
 })
         
 router.get('/comments/edit/:id', (req, res) => {
